@@ -1,0 +1,33 @@
+<script>
+    alunos = [
+        {
+            nome: 'fulano',
+            notas:[3,2,9]
+        },
+        {
+            nome: 'siclano',
+            notas:[7,8,9]
+        },
+        {
+            nome: 'deutrano',
+            notas:[5,3,4]
+        }
+    ]
+
+    function ordenaAlunos(array){
+        const melhorAluno = (a, b) => a + b
+
+        array.sort((a, b) => {
+            if(a.notas.reduce(melhorAluno) > b.notas.reduce(melhorAluno)){
+                return -1
+            }
+            else{
+                return 1
+            }
+        })
+        return alunos
+    }
+
+    console.log(ordenaAlunos(alunos))
+
+</script>
